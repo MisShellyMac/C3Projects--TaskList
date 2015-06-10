@@ -1,1 +1,24 @@
 <h1>Add a new task here:</h1>
+
+<form action="" method="post" accept-charset="utf-8">
+  <ul>
+    <li>
+      <label for="name"> Task Name:</label>
+      <input type="text" name="name" value="" id="name">
+    </li>
+
+    <li>
+      <label for="description"> Task Description: (Optional)</label>
+      <input type="text" name="description" value="" id="description">
+    </li>
+
+    <li>
+      <label for="completed_date"> Date Task Completed: (Optional)</label>
+      <input type="text" name="completed_date" value="" id="completed_date">
+    </li>
+
+  <input type="submit" value="Add To Task List">
+</form>
+<pre>
+<%= params %>
+</pre>
