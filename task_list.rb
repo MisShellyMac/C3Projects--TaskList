@@ -8,6 +8,8 @@ class TaskSite < Sinatra::Base
   register Sinatra::Reloader
 
   get "/" do
+    new_query = TaskList::Query.new("tasklist.db")
+    @tasks = new_query.all_tasks
     erb :index
   end
 
@@ -19,11 +21,9 @@ class TaskSite < Sinatra::Base
     @name = params[:name]
     @description = params[:description]
     @date_completed = params[:date_completed]
-
-    q = TaskList::Query.new("tasklist.db")
-    q.add_task(@name, @description, @date_completed)
+    new_query = TaskList::Query.new("tasklist.db")
+    new_query.add_task(@name, @description, @date_completed)
     redirect '/'
-    erb :index
   end
 
 

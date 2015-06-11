@@ -16,5 +16,14 @@ module TaskList
 
     end
 
+    def all_tasks
+      # @database_name = "db/tasklist.db"
+      #  db = SQLite3::Database.open @database_name
+      #  db.execute "SELECT * FROM tasklist;"
+         statement = "SELECT * FROM tasklist;"
+         query!(statement)
+      #  rescue SQLite3::Exception
+      #   db.close if db
+    end
   end
 end
