@@ -5,7 +5,7 @@
 
 
 <% @database_name = "db/tasklist.db" %>
-<% db = SQLite3::Database.new @database_name %>
+<% db = SQLite3::Database.open @database_name %>
 <%= db.execute "SELECT * FROM tasklist;" %>
 <% rescue SQLite3::Exception %>
 <% db.close if db  %>
