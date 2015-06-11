@@ -20,6 +20,8 @@ class TaskSite < Sinatra::Base
     @description = params[:description]
     @date_completed = params[:date_completed]
 
+    q = TaskList::Query.new("tasklist.db")
+    q.add_task(@name, @description, @date_completed)
     erb :index
   end
 

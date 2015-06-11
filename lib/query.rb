@@ -4,18 +4,16 @@ module TaskList
 
     def add_task(name, description, date_completed)
       # santitize/validate your arguments
-      @name = name
-      @description = description
-      @date_completed = date_completed
+
       # prepare your statement
 
-      @statement = "INSERT INTO taskList (Name, Description, Date_completed) VALUES (#{@name}, #{@description}, #{@date_completed});"
+      statement = "INSERT INTO taskList (Name, Description, Date_completed) VALUES (#{name}, #{description}, #{date_completed});"
 
       # call `query!` to interact with the database
-      query!(@statement, @name, @description, @date_completed)
+      query!(statement, name, description, date_completed)
 
       # determine what should be returned
-      
+
     end
 
   end
