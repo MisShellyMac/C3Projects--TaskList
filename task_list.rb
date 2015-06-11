@@ -22,6 +22,7 @@ class TaskSite < Sinatra::Base
 
     q = TaskList::Query.new("tasklist.db")
     q.add_task(@name, @description, @date_completed)
+    redirect '/'
     erb :index
   end
 

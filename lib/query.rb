@@ -10,7 +10,7 @@ module TaskList
       statement = "INSERT INTO tasklist (Name, Description, Date_completed) VALUES ('#{name}', '#{description}', '#{date_completed}');"
 
       # call `query!` to interact with the database
-      query!(statement, name, description, date_completed)
+      query!(statement)
 
       # determine what should be returned
 
