@@ -1,6 +1,8 @@
 require_relative 'lib/database'
+require_relative 'lib/query'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sqlite3'
 
 class TaskSite < Sinatra::Base
   register Sinatra::Reloader
