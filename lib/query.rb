@@ -2,17 +2,20 @@ module TaskList
   class Query < Database
 #this will go in a separate class at a later time.
 
-    def add_task(*args)
-      db = SQLite3::Database.open "taskList.db"
-      db.execute "INSERT INTO taskList (Name, Description, Date_completed) VALUES (#{args[0]}, #{args[1]}, #{args[2]});"
+    def add_task(name, description, date_completed)
+      # santitize/validate your arguments
+      @name = name
+      @description = description
+      @date_completed = date_completed
+      # prepare your statement
 
-# santitize/validate your arguments
+      @statement = "INSERT INTO taskList (Name, Description, Date_completed) VALUES (#{@name}, #{@description}, #{@date_completed});"
 
-# prepare your statement
+      # call `query!` to interact with the database
+      query!(@statement, @name, @description, @date_completed)
 
-# call `query!` to interact with the database
-
-# determine what should be returned
+      # determine what should be returned
+      
     end
 
   end

@@ -17,7 +17,8 @@ class TaskSite < Sinatra::Base
     @name = params[:name]
     @description = params[:description]
     @date_completed = params[:date_completed]
-    erb :add_task
+
+    erb :index
   end
 
 

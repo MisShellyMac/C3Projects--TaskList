@@ -13,7 +13,7 @@ module TaskList
     private
 
     def query!(statement, *params)
-      db = SQLite3::Database.new database_name
+      db = SQLite3::Database.new "tasklist.rb"
       db.execute statement, params
     rescue SQLite3::Exception => error
       # use this block to recover from an error
