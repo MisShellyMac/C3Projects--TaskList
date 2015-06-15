@@ -11,6 +11,11 @@ module TaskList
       query!(statement)
     end
 
+    # Just started to create this method to mark a task as completed, but we didn't finish.
+    def mark_as_complete(id)
+      statement = "update tasklist set Completed='true' where id=#{id};"
+      query!(statement)
+    end
 
     # This is used to display complete task list on front page.
     def all_tasks
