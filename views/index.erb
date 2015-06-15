@@ -3,10 +3,40 @@
 <h1>Welcome to Task Master!</h1>
 <h2> To add a task to your task list please <a href="/add_task"> Click here</a></h2>
 
-<ul>
-  <% @tasks.each do |task| %>
-    <li>
-      <%= task %>
-    </li>
+<table border ="1">
+
+    <tr>
+      <th>
+        Task
+      </th>
+      <th>
+        Task Name
+      </th>
+      <th width = "400px">
+        Task Description (Optional)
+      </th>
+      <th>
+        Date Completed
+      </th>
+    </tr>
+
+
+      <% @tasks.each do |task| %>
+    <tr>
+      <td>
+      <%= task[0] %>
+      </td>
+      <td>
+        <%= task[1] %>
+      </td>
+      <td>
+        <%= task[2] %>
+      </td>
+      <td>
+        <%= task[3] %>
+      </td>
+    </tr>
+      <!-- <%= task %> -->
+
   <% end %>
-</ul>
+</table>

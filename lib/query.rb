@@ -21,10 +21,10 @@ module TaskList
       #  db = SQLite3::Database.open @database_name
       #  db.execute "SELECT * FROM tasklist;"
          statement = "SELECT * FROM tasklist;"
-         tasks = query!(statement)
-         tasks = tasks.map do |task|
-           "#{task[0]}. #{task[1]} - #{task[2]}, completed on #{task[3]}"
-         end
+        query!(statement)
+        #  tasks = tasks.map do |task|
+        #    "#{task[0]}. Task Name: #{task[1]},  Task Description: #{task[2]}, Completed On: #{task[3]}."
+        #  end
         #  tasks.each do |string|
         #    puts string
         #  end
