@@ -3,14 +3,10 @@
 <h1>Welcome to Task Master!</h1>
 <h2> To add a task to your task list please <a href="/add_task"> Click here</a></h2>
 
-
-<%= @tasks %>
-<!-- <% @database_name = "db/tasklist.db" %>
-<% db = SQLite3::Database.open @database_name %>
-<%= db.execute "SELECT * FROM tasklist;" %>
-<% rescue SQLite3::Exception %>
-<% db.close if db  %>
-
-<pre>
-<%= params %>
-</pre> -->
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= task %>
+    </li>
+  <% end %>
+</ul>
