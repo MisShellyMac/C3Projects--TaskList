@@ -20,7 +20,8 @@
       </th>
     </tr>
 
-
+    <!-- This is using all the array index positions and putting each one in it's
+    own data cell in an html table-->
       <% @tasks.each do |task| %>
     <tr>
       <td>
@@ -36,7 +37,7 @@
         <%= task[3] %>
       </td>
     </tr>
-      <!-- <%= task %> -->
+
 
   <% end %>
 </table>

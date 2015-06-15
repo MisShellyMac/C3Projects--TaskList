@@ -3,12 +3,13 @@ require 'sqlite3'
 module TaskList
   class Database
     attr_reader :database_name
-
+    #Creating new database instance and also calls try_to_create_db method
     def initialize(database_name)
       @database_name = "db/#{ database_name }"
       try_to_create_db
     end
 
+    #checks for existence of file. If file DOES NOT exist, it will create one.
     def try_to_create_db
       unless File.exists?(@database_name)
         db = SQLite3::Database.new(@database_name)
@@ -18,6 +19,8 @@ module TaskList
 
     private
 
+    #Takes Statment and executes on open database. Returns Error if problems accessing
+    #database arise and lastly ensures database closes at end. 
     def query!(statement, *params)
       db = SQLite3::Database.open(database_name)
       db.execute statement #, params
