@@ -24,9 +24,11 @@ class TaskSite < Sinatra::Base
   post "/add_task" do
     @name = params[:name]
     @description = params[:description]
+    @completed = params[:completed]
     @date_completed = params[:date_completed]
+
     new_query = TaskList::Query.new("tasklist.db")
-    new_query.add_task(@name, @description, @date_completed)
+    new_query.add_task(@name, @description, @completed, @date_completed)
     redirect '/'
   end
 

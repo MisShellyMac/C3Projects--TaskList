@@ -3,9 +3,9 @@ module TaskList
 
     #This method is for adding a new task to existing tasklist database with
     #3 parameters. Only the name is required and the last two inputs are optional.
-    def add_task(name, description, date_completed)
+    def add_task(name, description, completed, date_completed)
       # prepare statement
-      statement = "INSERT INTO tasklist (Name, Description, Date_completed) VALUES ('#{name}', '#{description}', '#{date_completed}');"
+      statement = "INSERT INTO tasklist (Name, Description, Completed, Date_completed) VALUES ('#{name}', '#{description}', '#{completed}', '#{date_completed}');"
 
       # call `query!` to interact with the database
       query!(statement)

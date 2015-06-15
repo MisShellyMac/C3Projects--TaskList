@@ -19,3 +19,9 @@ h1{
 form{
   font-size: 32px;
 }
+
+input[type=checkbox]{
+  zoom: 2.0;
+  margin: 0;
+  padding: 0;
+  }
